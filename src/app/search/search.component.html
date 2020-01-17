@@ -1,7 +1,7 @@
 <div class="search__block">
 
   <div class="search__input">
-    <h1>Start type GitHub user name</h1>
+    <h1>Start type GitHub user name:</h1>
     <mat-form-field>
       <input
         matInput
@@ -28,11 +28,10 @@
     >
     <mat-card-content>
       <ul>
-        <li>public repos: {{ user.public_repos }}</li>
-        <li>public gists: {{ user.public_gists }}</li>
-        <li>followers: {{ user.followers }}</li>
-        <li>following: {{ user.following }}</li>
-        <li>created at: {{ user.created_at }}</li>
+        <li>Public repositories: {{ user.public_repos }}</li>
+        <li>Public gists: {{ user.public_gists }}</li>
+        <li>Followers: {{ user.followers }}</li>
+        <li>Following: {{ user.following }}</li>
       </ul>
     </mat-card-content>
     <mat-card-actions class="center">
