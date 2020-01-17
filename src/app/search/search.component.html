@@ -18,21 +18,31 @@
 
   <mat-card class="card" *ngIf="isLoaded">
     <mat-card-header>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-title>{{ user.name }}</mat-card-title>
+      <mat-card-subtitle>{{ user.location }}</mat-card-subtitle>
     </mat-card-header>
     <img
       mat-card-image
-      src=""
-      alt=""
+      [src]="user.avatar_url"
+      [alt]="user.name"
     >
     <mat-card-content>
       <ul>
-        <li></li>
+        <li>public repos: {{ user.public_repos }}</li>
+        <li>public gists: {{ user.public_gists }}</li>
+        <li>followers: {{ user.followers }}</li>
+        <li>following: {{ user.following }}</li>
+        <li>created at: {{ user.created_at }}</li>
       </ul>
     </mat-card-content>
     <mat-card-actions class="center">
-      <a mat-raised-button color="warn" target="_blank">View Profile</a>
+      <a
+        mat-raised-button color="warn"
+        target="_blank"
+        [href]="user.html_url"
+      >
+        View Profile
+      </a>
     </mat-card-actions>
   </mat-card>
 

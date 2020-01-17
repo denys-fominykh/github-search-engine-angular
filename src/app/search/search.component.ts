@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-search',
@@ -9,10 +10,16 @@ export class SearchComponent {
   public searchStr = '';
   public minLenght = 3;
   public isLoaded = false;
+  public user: any;
 
-  constructor() { }
+  constructor(private service: UserService) { }
 
   handleChange() {
-    console.log(this.searchStr);
+    if (this.minLenght <= this.searchStr.length) {
+      this.service.getUser(this.searchStr).subscribe(user => {
+        this.user = user;
+        this.isLoaded = true;
+      });
+    }
   }
 }
